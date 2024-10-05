@@ -10,9 +10,9 @@ Before you start, ensure that you have Python 3 installed on your local machine.
 
 ### Creating a Virtual Environment
 
-Using a virtual environment is a good practice to manage dependencies for your project. To create a virtual environment, follow these steps:
+To create a virtual environment, follow these steps:
 
-1. Navigate to your project directory.
+1. In the root project.
 2. Run the following command to create a virtual environment named `venv`:
 
    ```bash
@@ -45,9 +45,17 @@ pip install -r requirements.txt
 
 This command reads the `requirements.txt` file and installs the required packages.
 
+## Move to Project Directory
+
+Makesure you are in src directory.
+
+```bash
+cd src
+```
+
 ## Database Migration
 
-After installing the dependencies, you'll need to set up your database. Run the following command to apply migrations:
+After that you'll need to set up your database. Run the following command to apply migrations:
 
 ```bash
 python manage.py migrate
