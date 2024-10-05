@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+  Home Page
+{% endblock title %}
+{% block outercontent %}
+  <header class="position-relative overflow-hidden">
+    <div class="bg-image">
+      <picture>
+        <source media="(max-width: 768px)"
+                srcset="https://images.pexels.com/photos/8199251/pexels-photo-8199251.jpeg">
+        <source media="(min-width: 769px)"
+                srcset="https://images.pexels.com/photos/8199562/pexels-photo-8199562.jpeg">
+        <img src="https://images.pexels.com/photos/8199562/pexels-photo-8199562.jpeg"
+             class="img-fluid w-100"
+             style="object-fit: cover;
+                    height: 100vh;
+                    width: 100%"
+             alt="Library Image">
+      </picture>
+      <div class="p-3 d-flex align-items-center flex-column justify-content-center text-center mask"
+           style="background-color: hsla(0, 0%, 0%, 0.6)">
+        <h1 class="mb-3 text-primary">Welcome to the Perpustakaan Online</h1>
+        <h4 class="mb-3 text-primary">Read, Learn, and Grow</h4>
+        <button type="button"
+                class="btn btn-primary btn-lg"
+                data-mdb-ripple-init
+                data-mdb-ripple-color="light"
+                onclick="location.href='{% url 'core:book-list' %}'">Lihat Buku</button>
+      </div>
+    </div>
+  </header>
+{% endblock outercontent %}

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button for small screens -->
+    <button data-mdb-collapse-init
+            class="navbar-toggler"
+            type="button"
+            data-mdb-target="#navbarCenteredExample"
+            aria-controls="navbarCenteredExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <i class="fas fa-bars text-white"></i>
+    </button>
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="{% url 'core:home' %}">
+      <div class="d-flex align-items-center p-2">
+        <div class="me-2">
+          <i class="fas fa-book text-white"></i>
+        </div>
+        <div>
+          <h3 class="m-0 text-white">Perpustakaan Online</h3>
+        </div>
+      </div>
+    </a>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse d-flex justify-content-end"
+         id="navbarCenteredExample">
+      <!-- Navigation links -->
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link text-white {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}"
+               href="{% url 'core:dashboard' %}">Dashboard</a>
+          </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link text-white {% if request.resolver_match.url_name == 'book-list' %}active{% endif %}"
+             href="{% url 'core:book-list' %}">Buku</a>
+        </li>
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'users:logout' %}">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link text-white {% if request.resolver_match.url_name == 'login' %}active{% endif %}"
+               href="{% url 'users:login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white {% if request.resolver_match.url_name == 'signup' %}active{% endif %}"
+               href="{% url 'users:signup' %}">Daftar</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>

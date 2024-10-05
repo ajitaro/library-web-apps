@@ -1,0 +1,11 @@
+{% load static %}
+<div class="sidebar d-flex flex-column p-3 bg-primary"
+     style="height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000">
+  <h4 class="text-white mb-4">Menu</h4>
+  <a href="{% url 'core:book-list' %}" class="text-white mb-2">Buku</a>
+  <a href="{% url 'core:loan-list' %}" class="text-white mb-2">Pinjam</a>
+</div>

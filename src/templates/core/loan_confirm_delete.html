@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+  Konfirmasi Pengembalian Buku
+{% endblock title %}
+{% block content %}
+  <div class="container mt-5">
+    <h1 class="text-center">Konfirmasi Pengembalian</h1>
+    <p>Apakah Anda yakin ingin mengembalikan "{{ loan.book.title }}"?</p>
+    <form method="post" class="mt-4">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Ya</button>
+      <a href="{% url 'core:dashboard' %}" class="btn btn-secondary">Batal</a>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+  <h1>Dashboard - {{ request.user }}</h1>
+  {% if request.user.is_staff %}
+    <div class="text-center mt-4">
+      <a href="{% url 'core:import-books' %}" class="btn btn-success">Impor Buku</a>
+    </div>
+    <h2 class="mt-5">Daftar Peminjaman</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Buku</th>
+          <th>Peminjam</th>
+          <th>Email</th>
+          <th>Tanggal Pinjam</th>
+          <th>Tanggal Kembali</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for loan in loans %}
+          <tr>
+            <td>{{ loan.id }}</td>
+            <td>{{ loan.book.title }}</td>
+            <td>{{ loan.user.name }}</td>
+            <td>{{ loan.user.email }}</td>
+            <td>{{ loan.borrow_date }}</td>
+            <td>{{ loan.return_date }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="5" class="text-center">Tidak ada Peminjaman saat ini.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    {% include "core/loan_list.html" with loans=loans %}
+  {% endif %}
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+  Confirm Deletion
+{% endblock title %}
+{% block content %}
+  <div class="container">
+    <h1>Apakah Anda yakin ingin menghapus buku "{{ book.title }}"?</h1>
+    <p>Data yang dihapus tidak dapat dikembalikan.</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Hapus</button>
+      <a href="{% url 'core:book-list' %}" class="btn btn-secondary">Batal</a>
+    </form>
+  </div>
+{% endblock %}
