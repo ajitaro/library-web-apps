@@ -1,3 +1,7 @@
+Here's the updated documentation with the command to create a virtual environment included:
+
+---
+
 # Library Web App Documentation
 
 ## Overview
@@ -8,27 +12,32 @@ This documentation provides instructions for setting up and running the Library 
 
 Before you start, ensure that you have Python 3 installed on your local machine. You can download Python from the official [Python website](https://www.python.org/downloads/).
 
-### Setting Up the Virtual Environment
+### Creating a Virtual Environment
 
-Using a virtual environment is a good practice to manage dependencies for your project. Follow the instructions below to create and activate your virtual environment.
+Using a virtual environment is a good practice to manage dependencies for your project. To create a virtual environment, follow these steps:
+
+1. Navigate to your project directory.
+2. Run the following command to create a virtual environment named `venv`:
+
+   ```bash
+   python -m venv venv
+   ```
+
+### Activating the Virtual Environment
+
+Once you have created the virtual environment, activate it using the instructions below.
 
 #### On macOS/Linux
 
-1. Navigate to your project directory.
-2. Activate the virtual environment with the following command:
-
-   ```bash
-   source venv/bin/activate
-   ```
+```bash
+source venv/bin/activate
+```
 
 #### On Windows
 
-1. Navigate to your project directory.
-2. Activate the virtual environment with the following command:
-
-   ```bash
-   venv\Scripts\activate
-   ```
+```bash
+venv\Scripts\activate
+```
 
 ## Install Dependencies
 
