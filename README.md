@@ -1,7 +1,3 @@
-Here's the updated documentation with the command to create a virtual environment included:
-
----
-
 # Library Web App Documentation
 
 ## Overview
